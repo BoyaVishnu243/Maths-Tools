@@ -11,8 +11,8 @@
         font-family: Arial, sans-serif;
     }
     .calculator {
-        width: 400px;
-        margin: 50px auto;
+        width: 500px;
+        margin: 30px auto;
         padding: 20px;
         border: 3px solid #ccc;
         border-radius: 5px;
@@ -63,7 +63,7 @@
     <hr>
     <input type="button" value="0" onclick="appendNumber('0')">
     <input type="button" value="." onclick="appendDecimal()">
-    <input type="button" value="=" onclick="calculate()">
+    <input class="solve" type="button" value="=" onclick="calculate()">
     <input type="button" value="/" onclick="appendOperator('/')">
     <hr>
     <input type="button" value="C" onclick="clearDisplay()">

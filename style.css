@@ -36,6 +36,16 @@
   border: 2cm;
   text-align: center;
 }
+.sub-heading{
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  color:black;
+  width:auto;
+  font-weight: bold;
+  padding: 15px;
+  border-radius:5px;
+  background-color: skyblue;
+  text-align: center;
+}
 .select-bar{
   padding: 15px;
   border: 2px solid;
@@ -134,4 +144,13 @@
 .about-content{
   background-color: lightgreen;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.tool-box{
+  width: 700px;
+  margin: 50px auto;
+  padding: 20px;
+  border: 3px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  text-align: center;
 }

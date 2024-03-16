@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Advanced Tools</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js"></script>
+  <style>
+    input[type="text"] {
+      width: 200px;
+      margin-bottom: 10px;
+      padding: 5px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 18px;
+      text-align: left;
+    }
+  </style>
+</head>
+<body>
+  <div class="all-heading">
+    <h2>Advanced Tools</h2>
+  </div>
+  <div class="tool-box">
+    <h3 class="sub-heading">
+      Squaring a Number
+    </h3>
+    <p class="about-content">
+      Multiplying a number by itself is called squaring of a number
+    </p>
+    <p>Enter a number to square:</p>
+    <input type="text" value="0" id="sq" placeholder="Enter a number">
+    <button type="button" class="solve" onclick="squareNum()">Solve</button>
+    <p id="sqr"></p>
+  </div>
+  <div class="tool-box">
+    <h3 class="sub-heading">
+      Cubing a Number
+    </h3>
+    <p class="about-content">
+      Multiplying a number by itself three times is called cubing of a number
+    </p>
+    <p>Enter a number to cube:</p>
+    <input type="text" value="0" id="cu" placeholder="Enter a number">
+    <button type="button" class="solve" onclick="cubeNum()">Solve</button>
+    <p id="cur"></p>
+  </div>
+  <div class="tool-box">
+    <h3 class="sub-heading">
+      Power of a Number
+    </h3>
+    <p class="about-content">
+      Multiplying a number by n times is raising the power of number by n
+    </p>
+    <p>Enter base:</p>
+    <input type="text" value="0" id="base" placeholder="Enter base value">
+    <p>Enter power:</p>
+    <input type="text" value="0" id="power" placeholder="Enter power value"><br>
+    <button type="button" class="solve" onclick="calculatePower()">Solve</button>
+    <p id="bpr"></p>
+  </div>
+  <div class="tool-box">
+    <h3 class="sub-heading">
+      Exponential of a Number
+    </h3>
+    <p class="about-content">
+      Raising the power of the number e is called exponentiation
+    </p>
+    <p>Enter a number to exponentiate:</p>
+    <input type="text" value="0" id="ep" placeholder="Enter a number"><br>
+    <button type="button" class="solve" onclick="exponentiateToE()">Solve</button>
+    <input type="button" class="solve" value="Enter e" onclick="enterE()">
+    <p id="epr"></p>
+  </div>
+</body>
+</html>

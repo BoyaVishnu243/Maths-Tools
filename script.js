@@ -56,3 +56,39 @@ function simplifyFraction(numerator, denominator) {
   // Return the simplified fraction as a string
   return `${simplifiedNumerator}/${simplifiedDenominator}`;
 }
+function squareNum(){
+  const num=document.getElementById("sq").value;
+  const r=num*num;
+  document.getElementById("sqr").innerHTML=`The square of ${num} is ${r}`
+}
+function cubeNum(){
+  const num=document.getElementById("cu").value;
+  const r=num*num*num;
+  document.getElementById("cur").innerHTML=`The cube of ${num} is ${r}`
+}
+function calculatePower() {
+  // Get the base and exponent from input fields
+  let base = parseFloat(document.getElementById('base').value);
+  let power = parseFloat(document.getElementById('power').value);
+  let r=0;
+  // Calculate the power
+  if(base!=0 && power>=0){
+    r = Math.pow(base, power);
+  }
+  else if(base==0 && power==0){
+    r='undefined';
+  }
+  else if(power<0){
+    r=Math.pow(base,power);
+  }
+  // Display the result
+  document.getElementById("bpr").innerHTML=`Here ${base}<sup>${power}</sup> equals to ${r}`
+}
+function exponentiateToE(){
+  const power=document.getElementById('ep').value;
+  r=Math.exp(power);
+  document.getElementById('epr').innerHTML=`Here e<sup>${power}</sup> equals to ${r}`
+}
+function enterE(){
+  document.getElementById('ep').value=Math.exp(1);
+}
