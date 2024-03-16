@@ -1,0 +1,137 @@
+.home-heading{
+  font-family:Arial, Helvetica, sans-serif;
+  color: black;
+  width: 100%;
+  font-weight: bold;
+  padding: 15px;
+  border:2px solid;
+  border-radius: 5px;
+  background-color:palegreen;
+  border: 2cm;
+  text-align: center;
+}
+.home-image{
+  background: url('home.jpg') no-repeat;
+  background-size: cover;
+}
+.home-info{
+  width: 300px;
+  padding: 15px;
+  border: 2px solid;
+  font-weight: bold;
+  color: black;
+  border-radius: 5px;
+  margin: auto;
+  background-color: white;
+}
+.all-heading{
+  font-family:Arial, Helvetica, sans-serif;
+  color: black;
+  width: 100vw;
+  font-weight: bold;
+  padding: 15px;
+  border:5px solid;
+  border-radius: 5px;
+  background-color: palegreen;
+  border: 2cm;
+  text-align: center;
+}
+.select-bar{
+  padding: 15px;
+  border: 2px solid;
+  font-weight: bold;
+  color: black;
+  border-radius: 5px;
+  margin: auto;
+  background-color: white;
+}
+/* CSS for the sidebar */
+.sidebar {
+  height: 100%;
+  width: 300px;
+  position: relative;
+  background-color:transparent;
+  overflow-y: scroll;
+  padding-top: 20px;
+  border: 2px solid;
+}
+
+/* Links in the sidebar */
+.sidebar a {
+  padding: 10px;
+  background-color: #007bff;
+  text-decoration: none;
+  font-size: 18px;
+  color: black;
+  display: block;
+  border:2px solid;
+  border-radius: 15px;
+  transition: background-color 0.3s;
+}
+
+/* Change color on hover */
+.sidebar a:hover {
+  background-color: #555;
+  color: white;
+}
+
+/* Content container */
+.content {
+  margin-left: 250px;
+  padding: 20px;
+}
+.calculator-heading{
+  font-family:Arial, Helvetica, sans-serif;
+  color: black;
+  width: 100vw;
+  font-weight: bold;
+  padding: 15px;
+  border:5px solid;
+  border-radius: 5px;
+  background-color: palegreen;
+  border: 2cm;
+  text-align: center;
+}
+.linear-calculator-1{
+  width: 100%;
+  margin: 50px auto;
+  padding: 20px;
+  border: 3px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+.solve {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  border: 2px solid #4CAF50;
+  color: #ffffff;
+  background-color: #4CAF50;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+.solve:hover {
+  background-color: #45a049;
+  border-color: #45a049;
+}
+
+.solve:active {
+  background-color: #3e8e41;
+  border-color: #3e8e41;
+}
+.linear-calculator-1 input[type="text"] {
+  width: 400px;
+  height: 30px;
+  padding: 10px;
+  font-size: 16px;
+}
+.about-content{
+  background-color: lightgreen;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}

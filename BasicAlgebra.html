@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BasicAlgebra</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/9.5.0/math.min.js" integrity="sha384-Ds07q4TQJHg/+D8/1kc6Eg1gqdJx2Pl+BtP9GCHhpyEiJSXKOIGtvAInaX9j7k8L" crossorigin="anonymous"></script>
+</head>
+  <script>
+    function clearLinearTextBox() {
+      document.getElementById('a').value = '';
+      document.getElementById('b').value = '';
+    }
+    function fieldValues(){
+      document.getElementById('a').value='0';
+      document.getElementById('b').value='0';
+    }
+  </script>
+</head>
+<body onload="fieldValues()" >
+  <div class="all-heading">
+    <h1>BasicAlgebra</h1>
+  </div>
+  <div class="linear-calculator-1">
+    <form id="linearForm">
+      <h2>Linear Equation in One Variable</h2><hr><br>
+      <p class="about-content">If the Linear equation is of the form AX + B =0 then use the below:</p>
+      <label for="a">Enter value of 'A':</label><br>
+      <input type="text" value="0" id="a" placeholder="Enter A value"><br><br>
+      
+      <label for="b">Enter value of 'B':</label><br>
+      <input type="text" value="0" id="b" placeholder="Enter B value"><br><br>
+      
+      <button type="button" class="solve" onclick="solveLinearEquation()">Solve</button>
+      <input type="button" value="Clear" class="solve" onclick="clearLinearTextBox()">
+    </form>
+    <p id="le1"></p>
+    <p id="solution"></p>
+  </div>
+  <div class="linear-calculator-1">
+    <h2>Linear Equations in Two Variables</h2>
+    <hr><br>
+    <p class="about-content">If the Linear Equations in two variables are as follows<br>
+      A<sub>1</sub>X+B<sub>1</sub>Y=C<sub>1</sub><br>
+      A<sub>2</sub>X+B<sub>2</sub>Y=C<sub>2</sub>
+    </p><br>
+    <form id="equationForm">
+      <label for="a1">Equation 1: </label>
+      <input type="text" id="a1" placeholder="Value of A1" required>
+      <input type="text" id="b1" placeholder="Value of B1" required>
+      <input type="text" id="c1" placeholder="Value of C1" required><br><br>
+  
+      <label for="a2">Equation 2: </label>
+      <input type="text" id="a2" placeholder="Value of A2" required>
+      <input type="text" id="b2" placeholder="Value of B2" required>
+      <input type="text" id="c2" placeholder="Value of C2" required><br><br>
+      
+      <button type="button" class="solve" onclick="solveLinearInTwo()">Solve</button>
+    </form>
+    <p id="le2"></p>
+    <p id="result"></p>
+  </div>
+</body>
+</html>
