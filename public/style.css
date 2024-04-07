@@ -1,0 +1,486 @@
+.home-heading {
+  font-family: Arial, Helvetica, sans-serif;
+  color: black;
+  width: 100%;
+  font-weight: bold;
+  padding: 15px;
+  border: 2px solid;
+  border-radius: 5px;
+  background-color: palegreen;
+  border: 2cm;
+  text-align: center;
+}
+
+.scroll-container {
+  overflow: hidden;
+  /* Ensures that the text is hidden when it moves outside the container */
+  width: 100%;
+  /* Adjust width as needed */
+  font-family: Arial, Helvetica, sans-serif;
+  color: black;
+  width: 100%;
+  font-weight: bold;
+  padding: 15px;
+  border: 2px solid;
+  border-radius: 5px;
+  background-color: palegreen;
+  border: 2cm;
+  text-align: center;
+}
+
+.scroll-text {
+  white-space: nowrap;
+  /* Prevents text from wrapping */
+  animation: scroll 15s linear infinite;
+  /* Adjust duration as needed */
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(100%);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.home-image {
+  background: url("sign-in-image.webp");
+  background-size: cover;
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.home-info {
+  width: 300px;
+  padding: 15px;
+  border: 2px solid;
+  font-weight: bold;
+  position: relative;
+  text-align: center;
+  font-size: larger;
+  color: black;
+  border-radius: 5px;
+  margin: auto;
+  background-color: white;
+  animation: slideIn 1s ease-in-out forwards;
+}
+
+.all-heading {
+  font-family: Arial, Helvetica, sans-serif;
+  color: black;
+  width: 100vw;
+  font-weight: bold;
+  padding: 15px;
+  border: 5px solid;
+  border-radius: 5px;
+  background-color: palegreen;
+  border: 2cm;
+  text-align: center;
+}
+
+.sub-heading {
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  color: black;
+  width: auto;
+  font-weight: bold;
+  padding: 15px;
+  border-radius: 5px;
+  background-color: skyblue;
+  text-align: center;
+}
+
+.select-bar {
+  padding: 15px;
+  border: 2px solid;
+  font-weight: bold;
+  color: black;
+  border-radius: 5px;
+  border-color: azure;
+  margin: auto;
+  background-color: white;
+}
+
+/* CSS for the sidebar */
+.sidebar {
+  height: 400px;
+  width: 300px;
+  position: relative;
+  background-color: transparent;
+  overflow-y: scroll;
+  padding-top: 20px;
+  border: 2px solid;
+  border-color: azure;
+}
+
+/* Links in the sidebar */
+.sidebar a {
+  padding: 10px;
+  background-color: #81b6f0;
+  text-decoration: none;
+  text-align: center;
+  font-size: 18px;
+  color: black;
+  display: block;
+  /* border:2px solid; */
+  border-radius: 15px;
+  transition: background-color 0.3s;
+}
+
+/* Change color on hover */
+.sidebar a:hover {
+  background-color: #555;
+  color: white;
+}
+
+/* Content container */
+.content {
+  margin-left: 250px;
+  padding: 20px;
+}
+
+.calculator-heading {
+  font-family: Arial, Helvetica, sans-serif;
+  color: black;
+  width: 100vw;
+  font-weight: bold;
+  padding: 15px;
+  border: 5px solid;
+  border-radius: 5px;
+  background-color: palegreen;
+  border: 2cm;
+  text-align: center;
+}
+
+.linear-calculator-1 {
+  width: 100%;
+  margin: 50px auto;
+  padding: 20px;
+  border: 3px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+.solve {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  border: 2px solid #4caf50;
+  color: #ffffff;
+  background-color: #4caf50;
+  border-radius: 5px;
+  cursor: pointer;
+  transition:
+    background-color 0.3s,
+    color 0.3s,
+    border-color 0.3s;
+}
+
+.solve:hover {
+  background-color: #45a049;
+  border-color: #45a049;
+}
+
+.solve:active {
+  background-color: #3e8e41;
+  border-color: #3e8e41;
+}
+
+.linear-calculator-1 input[type="text"] {
+  width: 400px;
+  height: 30px;
+  padding: 10px;
+  font-size: 16px;
+}
+
+.about-content {
+  background-color: lightgreen;
+  text-align: center;
+  align-content: center;
+  font-size: 15px;
+  margin-bottom: 30px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.tool-box {
+  width: 700px;
+  margin: 50px auto;
+  padding: 20px;
+  border: 3px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+.body1 {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f2f2f2;
+}
+
+.signin-heading {
+  background-color: palegreen;
+  padding: 20px;
+  width: 100%;
+  text-align: center;
+  position: relative;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  /* Ensures the div is above other content */
+}
+
+.signin-background {
+  background: url("sign-in-image.webp") no-repeat;
+  background-size: cover;
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.signin-container {
+  width: 100%;
+  max-width: 400px;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  margin: 0 auto;
+}
+
+.signin-box {
+  background-color: rgba(248, 244, 244, 0.3);
+  padding: 20px;
+  border-radius: 5px;
+  margin: 20px auto;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.signin-box h2 {
+  margin-bottom: 20px;
+  text-align: center;
+  color: white;
+}
+
+.signin-box form {
+  display: flex;
+  flex-direction: column;
+  color: skyblue;
+  font-weight: bold;
+}
+
+.signin-box label {
+  margin-bottom: 5px;
+}
+
+.signin-box input[type="text"],
+.signin-box input[type="email"],
+.signin-box input[type="password"] {
+  padding: 10px;
+  margin-bottom: 10px;
+  margin-right: 10px;
+  width: 300px;
+  flex-direction: column;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+.signin-box button {
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.signin-box button:hover {
+  background-color: #0056b3;
+}
+
+.file-container {
+  position: absolute;
+  float: right;
+  margin-top: 20px;
+  top: 120px;
+  right: 0;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: rgb(26, 26, 121);
+  position: relative;
+  top: 0;
+  width: 100%;
+  cursor: pointer;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #1e82bd;
+  color: white;
+}
+
+.topnav-right {
+  float: right;
+}
+
+.container {
+  position: relative;
+  margin-top: 200px;
+  /* Distance from the top */
+}
+
+.floating-div {
+  width: 300px;
+  /* Adjust width as needed */
+  height: 600px;
+  /* Adjust height as needed */
+  background-color: transparent;
+  position: absolute;
+}
+
+.floating-div:nth-child(1) {
+  top: 0px;
+  left: 0;
+}
+
+.floating-div:nth-child(2) {
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.floating-div:nth-child(3) {
+  top: 0;
+  right: 0;
+}
+
+.flip-card {
+  background-color: transparent;
+  width: 300px;
+  height: 450px;
+  perspective: 1000px;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 300px;
+  height: 450px;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 300px;
+  height: 450px;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.flip-card-front {
+  background-color: rgb(14, 14, 219);
+  color: white;
+  font-size: 20px;
+  text-wrap: wrap;
+  text-indent: 20px;
+}
+
+.flip-card-back {
+  background-color: #2980b9;
+  color: white;
+  transform: rotateY(180deg);
+  padding: 10px;
+}
+
+.popup-container {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #f9f9f9;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.popup-content {
+  text-align: center;
+}
+
+.popup-content h2 {
+  margin-top: 0;
+}
+
+.button-container {
+  margin-top: 20px;
+}
+
+.popup-button {
+  padding: 8px 16px;
+  margin: 0 5px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.popup-button:hover {
+  background-color: #0056b3;
+}
+
+#closeBtn {
+  margin-top: 20px;
+  background-color: #dc3545;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 16px;
+  cursor: pointer;
+}
+
+#closeBtn:hover {
+  background-color: #bd2130;
+}

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tools Page</title>
+  <link rel="icon" type="image/x-icon" href="/logo4.ico">
+  <style src="./public/style.css"></style>
+  <!-- <link rel="stylesheet" href="/style.css" /> -->
+  <script src="/script.js"></script>
+  <style>
+    body {
+      background-color: rgba(238, 231, 231, 0.438);
+    }
+
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      /* 3 columns */
+      gap: 20px;
+      /* Adjust the gap between items as needed */
+    }
+
+    .heading {
+      background-color: #7cf780;
+      text-align: center;
+      padding: 15px;
+      border-radius: 15px;
+      margin-bottom: 20px;
+    }
+
+    .floating-div {
+      width: 200px;
+      /* Adjust width as needed */
+      height: 200px;
+      /* Adjust height as needed */
+      background-color: transparent;
+      position: relative;
+      margin-left: 30px;
+      margin-right: 30px;
+      margin-bottom: 30px;
+    }
+
+    /* Adjust top and left/right positions for each child */
+    .floating-div:nth-child(1) {
+      grid-row: 1;
+      grid-column: 1;
+      padding: 10px;
+      background-color: rgb(78, 236, 236);
+      text-align: center;
+      border: 2px dashed;
+      border-radius: 30px;
+    }
+
+    .floating-div:nth-child(2) {
+      grid-row: 1;
+      grid-column: 2;
+      padding: 10px;
+      background-color: rgb(78, 236, 236);
+      text-align: center;
+      border: 2px dashed;
+      border-radius: 30px;
+    }
+
+    .floating-div:nth-child(3) {
+      grid-row: 1;
+      grid-column: 3;
+      padding: 10px;
+      background-color: rgb(78, 236, 236);
+      text-align: center;
+      border: 2px dashed;
+      border-radius: 30px;
+    }
+
+    .floating-div:nth-child(4) {
+      grid-row: 2;
+      grid-column: 1;
+      padding: 10px;
+      background-color: rgb(78, 236, 236);
+      text-align: center;
+      border: 2px dashed;
+      border-radius: 30px;
+    }
+
+    .floating-div:nth-child(5) {
+      grid-row: 2;
+      grid-column: 2;
+      padding: 10px;
+      background-color: rgb(78, 236, 236);
+      text-align: center;
+      border: 2px dashed;
+      border-radius: 30px;
+    }
+
+    .floating-div:nth-child(6) {
+      grid-row: 2;
+      grid-column: 3;
+      padding: 10px;
+      background-color: rgb(78, 236, 236);
+      text-align: center;
+      border: 2px dashed;
+      border-radius: 30px;
+    }
+
+    .solve {
+      display: inline-block;
+      padding: 10px 20px;
+      font-size: 16px;
+      font-weight: bold;
+      text-align: center;
+      text-decoration: none;
+      border: 2px solid #4CAF50;
+      color: #ffffff;
+      background-color: #4CAF50;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+    }
+  </style>
+  <script>
+    function goToCalculator() {
+      window.location.href = '/home/tools/cal';
+    }
+    function goToLinear() {
+      window.location.href = '/home/tools/linear';
+    }
+    function goToPowers() {
+      window.location.href = '/home/tools/powers';
+    }
+    function goToComplex() {
+      window.location.href = '/home/tools/complex';
+    }
+    function goToQuadratic() {
+      window.location.href = '/home/tools/quadratic'
+    }
+    function goToTriangle() {
+      window.location.href = '/home/tools/triangle'
+    }
+  </script>
+</head>
+
+<body>
+  <div class="heading">
+    <h2>Tools Page</h2>
+  </div>
+  <div class="grid-container">
+    <a id="cal" class="floating-div">
+      <h3>Simple Calculator</h3>
+      <p>This is a simple calculator on simple Arithmetic Operations</p>
+      <input type="button" class="solve" value="go" id="calBtn" onclick="goToCalculator()"></input>
+    </a>
+    <div id="linear" class="floating-div">
+      <h3>Linear Algebra</h3>
+      <p>This contains some tools related to Linear Algebra</p>
+      <input type="button" class="solve" value="go" id="linearBtn" onclick="goToLinear()"></input>
+    </div>
+    <div id="powers" class="floating-div">
+      <h3>Powers and Exponents</h3>
+      <p>This contains Powers and Exponents in Mathematics</p>
+      <input type="button" class="solve" value="go" id="advancedBtn" onclick="goToPowers()"></input>
+    </div>
+    <div id="complex" class="floating-div">
+      <h3>Complex Numbers</h3>
+      <p>This contains some Tools in Complex Numbers</p>
+      <input type="button" class="solve" value="go" id="complexBtn" onclick="goToComplex()"></input>
+    </div>
+    <div id="quadratic" class="floating-div">
+      <h3>Qudratic Solver</h3>
+      <p>This is a Qudratic Equation Solver</p>
+      <input type="button" class="solve" value="go" id="quadraticBtn" onclick="goToQuadratic()"></input>
+    </div>
+    <div class="floating-div">
+      <h3>Triangle Solver</h3>
+      <p>This is a Triangle Solver</p>
+      <input type="button" class="solve" value="go" id="triangleBtn" onclick="goToTriangle()"></input>
+    </div>
+  </div>
+</body>
+
+</html>

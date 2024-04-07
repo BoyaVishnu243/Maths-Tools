@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quadratic Solver</title>
+    <link rel="icon" type="image/x-icon" href="/logo4.ico" />
+    <link rel="stylesheet" href="/style.css" />
+    <script src="/script.js"></script>
+    <style>
+      input[type="number"] {
+        width: 200px;
+        margin-top: 20px;
+        margin-bottom: 10px;
+        padding: 5px;
+        border: 1px solid black;
+        border-radius: 5px;
+        font-size: 18px;
+        text-align: left;
+      }
+    </style>
+    <script>
+      function isSquareNumber(num) {
+        if (num < 0) {
+          return false;
+        }
+        let squareRoot = Math.sqrt(num);
+        return squareRoot === Math.floor(squareRoot);
+      }
+      function solveQuadratic() {
+        var a = parseFloat(document.getElementById("a").value);
+        var b = parseFloat(document.getElementById("b").value);
+        var c = parseFloat(document.getElementById("c").value);
+        var det = b * b - 4 * a * c;
+        var x1 = (-b + Math.sqrt(det)) / (2 * a);
+        var x2 = (-b - Math.sqrt(det)) / (2 * a);
+        if (isNaN(a) || isNaN(b) || isNaN(c)) {
+          document.getElementById("sol").innerHTML = `Enter the valid values !`;
+        } else {
+          if (a == 0) {
+            document.getElementById(
+              "sol"
+            ).innerHTML = `NOT a Quadratic Equation<br> because A=0`;
+          } else if (a != 0) {
+            if (det > 0) {
+              if (isSquareNumber(det)) {
+                document.getElementById("sol").innerHTML = `
+                            Roots exist which are Real and Distinct<br>
+                            solutions are x1 = ${x1}<br>
+                            x2 = ${x2}`;
+              } else {
+                var w = simplifyFraction(-b, 2 * a);
+                document.getElementById("sol").innerHTML = `
+                            Roots exist which are Real and Distinct<br>
+                            solutions are x1 = (${w}) + (√${det})/${2 * a}<br>
+                            x2 = (${w}) - (√${det})/${2 * a}`;
+              }
+            } else if (det == 0) {
+              document.getElementById("sol").innerHTML = `
+                        Roots exist which are Real and Equal<br>
+                        solutions are x1 = ${x1}<br>
+                        x2 = ${x2}`;
+            } else {
+              var detc = Math.abs(b * b - 4 * a * c);
+              if (isSquareNumber(detc)) {
+                var d = Math.sqrt(detc);
+                var w = simplifyFraction(-b, 2 * a);
+                document.getElementById("sol").innerHTML = `
+                            Roots are Complex<br>
+                            solutions are x1 = ${w} + ${d}i<br>
+                            x2 = ${w} - ${d}i`;
+              } else {
+                var w = simplifyFraction(-b, 2 * a);
+                document.getElementById("sol").innerHTML = `
+                            Roots are Complex<br>
+                            solutions are x1 = (${w}) + i(√${detc})/${2 * a}<br>
+                            x2 = (${w}) - i(√${detc})/${2 * a}`;
+              }
+            }
+          }
+        }
+      }
+    </script>
+  </head>
+
+  <body>
+    <div class="all-heading">
+      <h2>Quadratic Solver</h2>
+    </div>
+    <div class="tool-box">
+      <div class="sub-heading">
+        Equation of the form AX<sup>2</sup>+BX+C=0 is called a Quadratic
+        Equation,<br />
+        where A ≠ 0
+      </div>
+      <div class="about-content">
+        <br />
+        Enter the A,B and C values to get the solution
+        <hr />
+        <img src="/QuadraticFormula.jpeg" alt="Formula" />
+      </div>
+      <h3>Enter the values</h3>
+      <label for="a">A value:</label>
+      <input type="number" id="a" placeholder="A value" /><br />
+      <label for="b">B value:</label>
+      <input type="number" id="b" placeholder="B value" /><br />
+      <label for="c">C value:</label>
+      <input type="number" id="c" placeholder="C value" /><br />
+      <button type="button" class="solve" onclick="solveQuadratic()">
+        Solve
+      </button>
+      <p id="sol"></p>
+    </div>
+  </body>
+</html>

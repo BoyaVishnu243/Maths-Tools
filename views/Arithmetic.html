@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple Calculator</title>
+    <link rel="icon" type="image/x-icon" href="/logo4.ico" />
+    <link rel="stylesheet" href="/style.css" />
+    <script src="/script.js"></script>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+      }
+
+      .calculator {
+        width: 500px;
+        margin: 30px auto;
+        padding: 20px;
+        border: 3px solid #ccc;
+        border-radius: 5px;
+        background-color: #f9f9f9;
+        text-align: center;
+      }
+
+      input[type="button"] {
+        display: inline-block;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: transform 0.2s, box-shadow 0.2s;
+      }
+
+      input[type="text"] {
+        width: 100%;
+        margin-bottom: 10px;
+        padding: 5px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 18px;
+        text-align: left;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="calculator-heading">
+      <h1>Simple Calculator</h1>
+    </div>
+    <div class="calculator">
+      <input
+        type="text"
+        id="display"
+        placeholder="Enter the Expression"
+        readonly
+      />
+      <input type="button" value="7" onclick="appendNumber('7')" />
+      <input type="button" value="8" onclick="appendNumber('8')" />
+      <input type="button" value="9" onclick="appendNumber('9')" />
+      <input type="button" value="+" onclick="appendOperator('+')" />
+      <hr />
+      <input type="button" value="4" onclick="appendNumber('4')" />
+      <input type="button" value="5" onclick="appendNumber('5')" />
+      <input type="button" value="6" onclick="appendNumber('6')" />
+      <input type="button" value="-" onclick="appendOperator('-')" />
+      <hr />
+      <input type="button" value="1" onclick="appendNumber('1')" />
+      <input type="button" value="2" onclick="appendNumber('2')" />
+      <input type="button" value="3" onclick="appendNumber('3')" />
+      <input type="button" value="*" onclick="appendOperator('*')" />
+      <hr />
+      <input type="button" value="0" onclick="appendNumber('0')" />
+      <input type="button" value="." onclick="appendDecimal()" />
+      <input class="solve" type="button" value="=" onclick="calculate()" />
+      <input type="button" value="/" onclick="appendOperator('/')" />
+      <hr />
+      <input type="button" value="C" onclick="clearDisplay()" />
+    </div>
+    <script>
+      function appendNumber(num) {
+        document.getElementById("display").value += num;
+      }
+      function appendOperator(op) {
+        document.getElementById("display").value += op;
+      }
+      function appendDecimal() {
+        var displayValue = document.getElementById("display").value;
+        if (displayValue.indexOf(".") === -1) {
+          document.getElementById("display").value += ".";
+        }
+      }
+      function clearDisplay() {
+        document.getElementById("display").value = "";
+      }
+      function calculate() {
+        var expression = document.getElementById("display").value;
+        try {
+          var result = eval(expression);
+          document.getElementById("display").value = result;
+        } catch (error) {
+          document.getElementById("display").value = "Error";
+        }
+      }
+    </script>
+  </body>
+</html>
