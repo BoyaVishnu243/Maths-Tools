@@ -2,7 +2,7 @@
   "name": "maths-tools",
   "version": "1.0.0",
   "description": "",
-  "main": "./views/Sign-In.html",
+  "main": "/views/Sign-In.html",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
