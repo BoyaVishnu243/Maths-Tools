@@ -94,7 +94,7 @@ const notes = document.getElementById("notes");
 function goToTools() {
   onAuthStateChanged(auth, (user) => {
     if (user) {
-      window.location.href = "/home/tools";
+      window.location.href = "/views/ToolsPage.html";
     } else {
       window.location.href = "/home/error";
     }
