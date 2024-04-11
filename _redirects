@@ -1,5 +1,5 @@
 / /public/index.html
-/home /public/index.html
+/public/index.html /home
 /tools /views/ToolsPage.html
 /login /public/Sign-In.html
 /signup /public/Sign_Up.html
