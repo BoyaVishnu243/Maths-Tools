@@ -1,6 +1,6 @@
 # Rules for routes
 /*    /public/index.html    200
-/home/*    /public/index.html    200
-/login/*    /public/Sign-In.html    200
-/signup/*    /public/Sign-Up.html    200
-/home/tools/*    /views/ToolsPage.html    200
+/home    /public/index.html    200
+/login    /public/Sign-In.html    200
+/signup    /public/Sign-Up.html    200
+/home/tools    /views/ToolsPage.html    200
