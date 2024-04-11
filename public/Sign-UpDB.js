@@ -68,7 +68,7 @@ const newSignUp = async () => {
     );
     const user = userCredential.user;
     alert("Your account has been created!");
-    window.location.replace("/login");
+    window.location.href="/public/Sign-In.html";
   } catch (error) {
     const errorCode = error.code;
     const errorMessage = error.message;

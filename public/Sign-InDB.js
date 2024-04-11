@@ -47,7 +47,7 @@ const goToSignUp = document.querySelector("#signup");
 
 //Function to Redirect to SignUp page
 function redirectToSignUp() {
-  window.location.href = "/signup";
+  window.location.href = "/public/Sign-Up.html";
 }
 if (goToSignUp != null) {
   goToSignUp.addEventListener("click", redirectToSignUp);

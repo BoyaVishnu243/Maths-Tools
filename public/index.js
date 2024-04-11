@@ -39,13 +39,9 @@ const db = getDatabase(app);
 //To check the user authentication status
 onAuthStateChanged(auth, (user) => {
   if (user) {
-    sessionStorage.setItem("isUser", true);
     showContentToUser();
-    console.log(user);
-    console.log(user.metadata.creationTime);
-    console.log(user.email);
+    console.log("user is in use");
   } else {
-    sessionStorage.setItem("isUser", false);
     hideContentFromUser();
     console.log("User Not in Use");
   }
@@ -68,18 +64,15 @@ function hideContentFromUser() {
 function logoutUser() {
   signOut(auth)
     .then(() => {
-      sessionStorage.setItem("isUser", false);
       onAuthStateChanged(auth, (user) => {
         if (user) {
-          console.log(user);
-          console.log(user.metadata.creationTime);
-          console.log(user.email);
+          console.log("user logged in");
         } else {
           console.log("user logged out");
         }
       });
       console.log("User logged out successfully");
-      window.location.href = "/home";
+      window.location.href = "/public/index.html";
     })
     .catch((error) => {
       console.error("Error logging out:", error);
@@ -96,7 +89,7 @@ function goToTools() {
     if (user) {
       window.location.href = "/views/ToolsPage.html";
     } else {
-      window.location.href = "/home/error";
+      window.location.href = "/public/error.html";
     }
   });
 }
