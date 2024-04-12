@@ -62,7 +62,7 @@ const userSignIn = async () => {
     .then((userCredential) => {
       userData = userCredential.user;
       alert("Login Successfully!");
-      window.location.href = "/home";
+      window.location.href = "/public/index.html";
     })
     .catch((error) => {
       alert(error.message);
@@ -80,14 +80,14 @@ const userSignInWithGoogle = async () => {
         if (user) {
           user = user.currentUser;
           // User is signed in, allow access to the page
-          window.location.href = "/home";
+          window.location.href = "/public/index.html";
         } else {
           // User is not signed in, redirect to login page or display message
-          window.location.href = "/login";
+          window.location.href = "/public/Sign-In.html";
         }
       });
       alert("Login Successfully!");
-      window.location.href = "/login";
+      window.location.href = "/public/Sign-In.html";
     })
     .catch((error) => {
       alert(error.code, error.message);

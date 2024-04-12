@@ -5,3 +5,12 @@
 /signup    /public/Sign-Up.html    200
 /home/tools    /views/ToolsPage.html    200
 /forgotPassword    /public/forgotPassword.html    200
+/home/error    /public/error.html    200
+/account    /public/account.html    200
+/home/about    /public/About.html    200
+/home/tools/cal    /views/Arithmetic.html    200
+/home/tools/linear    /views/BasicAlgebra.html    200
+/home/tools/powers    /views/Powers.html    200
+/home/tools/complex    /views/Complex.html    200
+/home/tools/quadratic    /views/Quadratic.html    200
+/home/tools/triangle    /views/Triangle/html    200

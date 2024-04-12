@@ -72,7 +72,7 @@ function logoutUser() {
         }
       });
       console.log("User logged out successfully");
-      window.location.href = "/public/index.html";
+      //window.location.href = "/public/index.html";
     })
     .catch((error) => {
       console.error("Error logging out:", error);
