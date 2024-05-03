@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Home</title>
+  <link rel="icon" type="image/x-icon" href="/public/logo4.ico">
+  <link rel="stylesheet" href="/public/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <script src="/public/script.js"></script>
+  <script type="module" src="/public/index.js"></script>
+  <script>
+    function showUser() {
+      var storedEmail = sessionStorage.getItem('userEmail');
+      console.log(storedEmail);
+      document.getElementById('userDisplay').innerHTML = `Welcome "${storedEmail.split("@")[0]}"`;
+    };
+    function toUserAccount() {
+      if (account != null) {
+        window.location.href = '/public/account.html';
+      } else {
+        window.location.href = '/public/index.html';
+      }
+    }
+    const account = document.getElementById("account")
+  </script>
+  <style>
+    #login {
+      display: none;
+    }
+
+    img {
+      width: 300px;
+      height: 380px;
+    }
+
+    .contact {
+      margin-top: 900px;
+      border-color: azure;
+      border: solid;
+      color: white;
+      padding-left: 20px;
+      background-color: rgba(216, 232, 233, 0.26);
+    }
+
+    .contact-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .contact-list div {
+      margin-bottom: 10px;
+      color: white;
+      display: flex;
+      align-items: left;
+      justify-content: left;
+      padding-left: 30px;
+    }
+
+    .contact-list div .icon {
+      margin-right: 10px;
+      color: white;
+      width: 24px;
+      height: 24px;
+    }
+  </style>
+</head>
+
+<body class="home-image">
+  <div class="topnav">
+    <a id="tools">
+      <i class="fa fa-wrench"></i>
+      Tools</a>
+    <a id="explore" href="#explore">
+      <i class="fa fa-compass"></i>
+      Explore</a>
+    <div class="topnav-right">
+      <a id="login" href="/public/Sign-In.html">Login</a>
+      <a id="logout">Logout</a>
+      <a id="about" href="/public/About.html">
+        <i class="fas fa-info-circle"></i>
+        About
+      </a>
+      <a href="/public/account.html" id="account">
+        <i class="fas fa-user-circle"></i>
+        Account
+      </a>
+    </div>
+  </div>
+  <div class="container">
+    <div class="floating-div">
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <h2>Useful Tools</h2>
+            <img src="/public/flipTools.jpg" alt="Avatar">
+          </div>
+          <div class="flip-card-back">
+            <h1>Useful Tools for Maths</h1>
+            <p>Useful solvers and calculators are included</p>
+            <p>Enter the problem to solve</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="floating-div">
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <h2>Let's Explore</h2>
+            <img src="/public/flipExplore.jpg" alt="Avatar">
+          </div>
+          <div class="flip-card-back">
+            <h1>Explore Maths</h1>
+            <p>Use the tools and explore the things</p>
+            <p>Find the solution and understand the problem</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="floating-div">
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <h2>Make Notes</h2>
+            <img src="/public/flipNotes.jpg" alt="Avatar">
+          </div>
+          <div class="flip-card-back">
+            <h1>Make Notes</h1>
+            <p>Make notes of the problem solved</p>
+            <p>Note the results and analyze the related problems</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="contact">
+    <h1>Contact Us</h1>
+    <h3>If you have any questions, feedback, or inquiries about my project web app, feel free to reach out to me!</h3>
+    <div class="contact-list">
+      <div><i class="fas fa-envelope icon"></i> Email: boyavishnu243@gmail.com</div>
+      <div><i class="fas fa-phone icon"></i> Phone: +91 6366908464</div>
+      <div><i class="fab fa-linkedin icon"></i> LinkedIn: <a title="LinkedIn"
+          href="https://www.linkedin.com/in/vishnu-vardhan-boya-21a625259/" target="_blank"
+          rel="noopener">visit_my_LinkedInProfile</a></div>
+    </div>
+</body>
+
+</html>

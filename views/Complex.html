@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complex Calculator</title>
+    <link rel="icon" type="image/x-icon" href="/public/logo4.ico">
+    <link rel="stylesheet" href="/public/style.css" />
+    <script src="/public/script.js"></script>
+    <style>
+        input[type="number"] {
+            width: 200px;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            padding: 5px;
+            border: 1px solid black;
+            border-radius: 5px;
+            font-size: 18px;
+            text-align: left;
+        }
+    </style>
+    <script>
+        function addCom() {
+            var a = parseFloat(document.getElementById("a").value);
+            var b = parseFloat(document.getElementById("b").value);
+            var c = parseFloat(document.getElementById("c").value);
+            var d = parseFloat(document.getElementById("d").value);
+            var p = a + c;
+            var q = b + d;
+            if (isNaN(a) || isNaN(b) || isNaN(c) || isNaN(d)) {
+                document.getElementById("sol").innerHTML = `Enter the valid values !`
+            }
+            else {
+                document.getElementById("sol").innerHTML = `<h3>Addition</h3>
+                Addition of Z<sub>1</sub> and Z<sub>2</sub> can be illustrated as<br>
+                    Z=(a+bi)+(c+di)<br>
+                    Z=(a+c)+(b+d)i<hr>
+                Here the numbers are :<br>
+                    Z<sub>1</sub>=${a}+${b}i and Z<sub>2</sub>=${c}+${d}i<br>
+                    Addition of two numbers is Z=Z<sub>1</sub>+Z<sub>2</sub><br>
+                        Z=(${a}+${c})+(${b}+${d})i<br>
+                    That is Z=${p}+${q}i<br>`
+            }
+        }
+        function subCom() {
+            var a = parseFloat(document.getElementById("a").value);
+            var b = parseFloat(document.getElementById("b").value);
+            var c = parseFloat(document.getElementById("c").value);
+            var d = parseFloat(document.getElementById("d").value);
+            var p = a - c;
+            var q = b - d;
+            if (isNaN(a) || isNaN(b) || isNaN(c) || isNaN(d)) {
+                document.getElementById("sol").innerHTML = `Enter the valid values !`
+            }
+            else {
+                document.getElementById("sol").innerHTML = `<h3>Subtraction</h3>
+                    Difference of Z<sub>1</sub> and Z<sub>2</sub> can be illustrated as<br>
+                    Z=(a+bi)-(c+di)<br>
+                    Z=(a-c)+(b-d)i<hr>
+                    Here the numbers are :<br>
+                    Z<sub>1</sub>=${a}+${b}i and Z<sub>2</sub>=${c}+${d}i<br>
+                    Difference of two numbers is Z=Z<sub>1</sub>-Z<sub>2</sub><br>
+                        Z=(${a}-${c})+(${b}-${d})i<br>
+                    That is Z=${p}+${q}i<br>`
+            }
+        }
+        function mulCom() {
+            var a = parseFloat(document.getElementById("a").value);
+            var b = parseFloat(document.getElementById("b").value);
+            var c = parseFloat(document.getElementById("c").value);
+            var d = parseFloat(document.getElementById("d").value);
+            var p = (a * c) - (b * d)
+            var q = (a * d) + (b * c)
+            if (isNaN(a) || isNaN(b) || isNaN(c) || isNaN(d)) {
+                document.getElementById("sol").innerHTML = `Enter the valid values !`
+            }
+            else {
+                document.getElementById("sol").innerHTML = `<h3>Multiplication</h3>
+                    Product of Z<sub>1</sub> and Z<sub>2</sub> can be illustrated as<br>
+                    Z=(a+bi)×(c+di)<br>
+                    Z=(ac−bd)+(ad+bc)i<hr>
+                    Here the numbers are :<br>
+                    Z<sub>1</sub>=${a}+${b}i and Z<sub>2</sub>=${c}+${d}i<br>
+                    Product of two numbers is Z=Z<sub>1</sub>×Z<sub>2</sub><br>
+                    Z=(${a}+${b}i)×(${c}+${d}i)<br>
+                    That is Z=(${a * c}-${b * d})+(${a * d}+${b * c})i<br>
+                    That is Z=${p}+${q}i`
+            }
+        }
+        function divCom() {
+            var a = parseFloat(document.getElementById("a").value);
+            var b = parseFloat(document.getElementById("b").value);
+            var c = parseFloat(document.getElementById("c").value);
+            var d = parseFloat(document.getElementById("d").value);
+            var nr = (a * c) + (b * d)
+            var ni = (b * c) - (a * d)
+            var de = (c * c) + (d * d)
+            var p = simplifyFraction(nr, de)
+            var q = simplifyFraction(ni, de)
+            if (isNaN(a) || isNaN(b) || isNaN(c) || isNaN(d)) {
+                document.getElementById("sol").innerHTML = `Enter the valid values !`
+            }
+            else if (c == 0 && d == 0) {
+                document.getElementById("sol").innerHTML = `Division by Zero !`
+            }
+            else {
+                document.getElementById("sol").innerHTML = `<h3>Division</h3>
+                    Division of Z<sub>1</sub> by Z<sub>2</sub> can be illustrated as<br>
+                    Z=(a+bi)/(c+di)<br>
+                    Z=(ac+bd)/(cc+dd)+(bc-ad)/(cc+dd)i<hr>
+                    Here the numbers are :<br>
+                    Z<sub>1</sub>=${a}+${b}i and Z<sub>2</sub>=${c}+${d}i<br>
+                    Division of two numbers is Z=Z<sub>1</sub>×Z<sub>2</sub><br>
+                    Z=(${a}+${b}i)/(${c}+${d}i)<br>
+                    That is Z=((${a * c}+${b * d})+(${b * c}-${a * d})i)/(${de})<br>
+                    That is Z=(${p},${q})=${p}+${q}i`
+            }
+        }
+        function getConjugate() {
+            var x = parseFloat(document.getElementById("x").value);
+            var y = parseFloat(document.getElementById("y").value);
+            var y1;
+            // console.log(x,y);
+            if (isNaN(x) || isNaN(y)) {
+                document.getElementById("sol2").innerHTML = `Enter the valid values !`
+            }
+            else {
+                if (y >= 0) {
+                    y1 = `-${y}`
+                }
+                else {
+                    y1 = `+${y}`
+                }
+                document.getElementById("sol2").innerHTML = `<p>Conjugate of Z=${x}+${y}i
+                    is equals to<br>
+                    conj(Z)=conj(${x}+${y}i)<br>
+                    conj(Z)=${x}${y1}i<p>`
+            }
+        }
+        function getArgument() {
+            var x = parseFloat(document.getElementById("x").value);
+            var y = parseFloat(document.getElementById("y").value);
+            if (isNaN(x) || isNaN(y)) {
+                document.getElementById("sol2").innerHTML = `Enter the valid values !`
+            }
+            else {
+                // Calculate the argument in radians
+                let radians = Math.atan2(y, x);
+
+                // Convert radians to degrees
+                let degrees = radians * (180 / Math.PI);
+
+                // Convert radians to gradians
+                let gradians = radians * (200 / Math.PI);
+
+                document.getElementById("sol2").innerHTML = `<p>
+                        Argument of Z is<br>
+                        Arg(Z)=Tan<sup>-1</sup>(<sup>${y}</sup>/<sub>${x}</sub>)<br>
+                        Below is the angle in various measures<br>
+                        Arg(Z)=${radians} radians<br>
+                        Arg(Z)=${degrees} degrees<br>
+                        Arg(Z)=${gradians} gradians`
+            }
+        }
+        function getModulus() {
+            var x = parseFloat(document.getElementById("x").value);
+            var y = parseFloat(document.getElementById("y").value);
+            if (isNaN(x) || isNaN(y)) {
+                document.getElementById("sol2").innerHTML = `Enter the valid values !`
+            }
+            else {
+                var result = Math.sqrt(x * x + y * y);
+                document.getElementById("sol2").innerHTML = `
+                    The Modulus of Z  is<br>
+                    mod(Z)=|${x}+${y}i|<br>
+                    mod(Z)=√(${x}<sup>2</sup>+${y}<sup>2</sup>)<br>
+                    mod(Z)=${result}`
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div class="all-heading">
+        <h2>Complex Calculator</h2>
+    </div>
+    <div class="tool-box">
+        <div class="sub-heading">Operations on Complex Numbers</div>
+        <div class="about-content">
+            <p>Let Z1 and Z2 be the two complex numbers
+                let Z1=a+bi; Z2=c+di,
+                where i=√-1
+            </p>
+        </div>
+        <h3>Enter the values for Z<sub>1</sub></h3>
+        <input type="number" id="a" placeholder="Real Part of Z1"><br>
+        <input type="number" id="b" placeholder="Imaginary Part of Z1"><br>
+        <h3>Enter the values for Z<sub>2</sub></h3>
+        <input type="number" id="c" placeholder="Real Part of Z2"><br>
+        <input type="number" id="d" placeholder="Imaginary Part of Z2"><br>
+        <h3>Select the operation to perform on the two Complex Numbers</h3>
+        <button type="button" class="solve" onclick="addCom()" value="Add">Add</button>
+        <button type="button" class="solve" onclick="subCom()">Sub</button>
+        <button type="button" class="solve" onclick="mulCom()">Mul</button>
+        <button type="button" class="solve" onclick="divCom()">Div</button><br>
+        <p id="sol"></p>
+    </div>
+    <div class="tool-box">
+        <div class="sub-heading">Modulus, Conjugate and Argument</div>
+        <div class="about-content">
+            <p>
+            <h4>1.Modulus of a Complex Number</h4>
+            Let Z=a+bi then the Modulus of Z can be written as mod(Z)=|a+bi|<br>
+            that is mod(Z)=√(a<sup>2</sup>+b<sup>2</sup>)
+            <h4>2.Conjugate of a Complex Number</h4>
+            Let Z=a+bi then the Conjugate of Z can be written as Z=a-bi;<br>
+            That is the sign of imaginary part is changed
+            <h4>3.Argument of a Complex Number</h4>
+            Let Z=a+bi then the Argument of Z can be obtained by<br>
+            Arg(Z) = Tan<sup>-1</sup>(<sup>b</sup>/<sub>a</sub>)
+            </p>
+        </div>
+        <h3>Enter the values for Z</h3>
+        <input type="number" id="x" placeholder="Real Part of Z"><br>
+        <input type="number" id="y" placeholder="Imaginary Part of Z"><br>
+        <h3>Select the operation to perform the operation on Complex Number</h3>
+        <button type="button" class="solve" onclick="getModulus()">modulus</button>
+        <button type="button" class="solve" onclick="getConjugate()">conjugate</button>
+        <button type="button" class="solve" onclick="getArgument()">argument</button>
+        <p id="sol2"></p>
+    </div>
+</body>
+
+</html>
